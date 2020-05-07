@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- materials -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+ <gazebo reference="wheel_1">
+        <material>Gazebo/Black</material>
+ </gazebo>
+
+ <gazebo reference="wheel_2">
+        <material>Gazebo/Black</material>
+ </gazebo>
+
+ <gazebo reference="wheel_3">
+        <material>Gazebo/Black</material>
+ </gazebo>
+
+ <gazebo reference="wheel_4">
+        <material>Gazebo/Black</material>
+ </gazebo>
+
+
+  <!-- ros_control plugin -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/robot</robotNamespace>
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+  </gazebo>
+
+  <!-- Link1 -->
+  <gazebo reference="link1">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <!-- Link2 -->
+  <gazebo reference="link2">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <!-- Link3 -->
+  <gazebo reference="link3">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+ 	<!-- skid_steer_drive_controller -->
+	<gazebo>
+	  <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+	    <updateRate>2000.0</updateRate>
+	    <robotNamespace>/</robotNamespace>
+	    <covariance_x>0.000100</covariance_x>
+	    <covariance_y>0.000100</covariance_y>
+	    <covariance_yaw>0.010000</covariance_yaw>
+	    <leftFrontJoint>base_to_wheel1</leftFrontJoint>
+	    <rightFrontJoint>base_to_wheel3</rightFrontJoint>
+	    <leftRearJoint>base_to_wheel2</leftRearJoint>
+	    <rightRearJoint>base_to_wheel4</rightRearJoint>
+	    <wheelSeparation>4</wheelSeparation>
+	    <wheelDiameter>0.5</wheelDiameter>
+	    <robotBaseFrame>base_link</robotBaseFrame>
+	    <torque>5</torque>
+	    <topicName>cmd_vel</topicName>
+	    <commandTopic>cmd_vel</commandTopic>
+	    <odometryTopic>odom</odometryTopic>
+	    <odometryFrame>odom</odometryFrame>
+	    <broadcastTF>0</broadcastTF>
+	  </plugin>
+	</gazebo>
+
+
+  <!-- stereo camera -->
+    <gazebo reference="camera_link">  
+      <sensor type="multicamera" name="stereocamera">
+        <always_on>true</always_on>
+        <update_rate>30</update_rate>
+        <visualize>false</visualize>
+        <camera name="left">
+          <pose>0 0.05 0 0 0 0</pose>
+          <horizontal_fov>1.047</horizontal_fov>
+          <image>
+            <width>848</width>
+            <height>480</height>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+        </camera>
+        <camera name="right">
+          <pose>0 -0.05 0 0 0 0</pose>
+          <horizontal_fov>1.047</horizontal_fov>
+          <image>
+            <width>848</width>
+            <height>480</height>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+        </camera>        
+        <plugin name="stereo_camera_controller" filename="libgazebo_ros_multicamera.so">
+          <cameraName>stereocamera</cameraName>
+          <alwaysOn>true</alwaysOn>
+          <updateRate>30</updateRate>
+          <cameraName>stereocamera</cameraName>
+          <imageTopicName>image_raw</imageTopicName>
+          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+          <frameName>camera_link_optical</frameName>
+          <baseline>0.07</baseline>
+          <distortion_k1>0.0</distortion_k1>
+          <distortion_k2>0.0</distortion_k2>
+          <distortion_k3>0.0</distortion_k3>
+          <distortion_t1>0.0</distortion_t1>
+          <distortion_t2>0.0</distortion_t2>
+        </plugin>
+      </sensor>
+    </gazebo>
+
+  <!-- imu -->
+    <gazebo reference="imu_link">
+        <gravity>true</gravity>
+        <sensor name="imu" type="imu">
+            <always_on>true</always_on>
+            <update_rate>100</update_rate>
+            <topic>/imu</topic>
+            <plugin name="imu_plugin" filename="libgazebo_ros_imu_sensor.so" >
+                <topicName>/imu</topicName>
+                <bodyName>imu_link</bodyName>
+                <updateRateHZ>200</updateRateHZ>
+                <gaussianNoise>0.05</gaussianNoise>
+                <xyzOffset>0 0 0</xyzOffset>
+                <rpyOffset>0 0 0</rpyOffset>
+                <frameName>imu_link</frameName>
+            </plugin>
+            <pose>0 0 0 0 0 0</pose>
+        </sensor>
+    </gazebo>
+
+	<gazebo>
+	  <plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
+	    <alwaysOn>true</alwaysOn>
+	    <updateRate>50.0</updateRate>
+	    <bodyName>base_link</bodyName>
+	    <topicName>ground_truth/state</topicName>
+	    <gaussianNoise>0.01</gaussianNoise>
+	    <frameName>world</frameName>
+	    <xyzOffsets>0 0 0</xyzOffsets>
+	    <rpyOffsets>0 0 0</rpyOffsets>
+	  </plugin>
+	</gazebo>
+
+</robot>
