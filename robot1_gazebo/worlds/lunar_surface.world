@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <world name="default">
+    <!-- override the default position of the camera -->
+    <gui>
+      <camera name='gzclient_camera'>
+        <pose>36.00 -27.95 24.67 0.00 0.53 2.376</pose>
+      </camera>
+    </gui>
+
+    <!-- Gravity --><!-- 1/6 of 9.80665 -->
+      <gravity>0 0 -1.6350</gravity> 
+ 
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>  
+    <atmosphere type="adiabatic"/>  
+    <physics name="default_physics" default="0" type="ode"> 
+      <max_step_size>0.001</max_step_size>  
+      <real_time_factor>1</real_time_factor>  
+      <real_time_update_rate>1000</real_time_update_rate> 
+    </physics>  
+    <scene> 
+      <ambient>0.4 0.4 0.4 1</ambient>  
+      <background>0.7 0.7 0.7 1</background>  
+      <shadows>1</shadows> 
+    </scene>  
+    <spherical_coordinates> 
+      <surface_model>EARTH_WGS84</surface_model>  
+      <latitude_deg>0</latitude_deg>  
+      <longitude_deg>0</longitude_deg>  
+      <elevation>0</elevation>  
+      <heading_deg>0</heading_deg> 
+    </spherical_coordinates> 
+
+    <model name="lunar_landscape"> 
+    <include>
+      <uri>model://lunar_landscape</uri>
+    </include> 
+      <pose frame="">0 0 0 0 -0 0</pose> 
+    </model>
+  
+    <model name="ground_plane"> 
+      <pose frame="">0 0 -1 0 -0 0</pose>  
+      <scale>1 1 1</scale>  
+      <link name="link"> 
+        <pose frame="">0 0 -1 0 -0 0</pose>  
+        <velocity>0 0 0 0 -0 0</velocity>  
+        <acceleration>0 0 0 0 -0 0</acceleration>  
+        <!-- <wrench>0 0 0 0 -0 0</wrench>  -->
+      </link>  
+    </model> 
+
+    <!-- Starry sky -->
+<!--
+    <scene>
+      <ambient>0.0 0.0 0.0 1.0</ambient>
+      <background>0.0 0.0 0.0 1</background>
+      <grid>false</grid>
+      <sky>
+        <time>13</time>
+        <sunrise>12</sunrise>
+        <sunset>12</sunset>
+        <clouds>
+          <humidity>0</humidity>
+        </clouds>
+      </sky>
+      <shadows>1</shadows>
+    </scene>
+-->
+ <!-- Testing the automatic population of objects -->
+    <population name="stone_population1">
+      <model name="stone1">
+        <include>
+          <static>true</static>
+          <uri>model://stone1</uri>
+        </include>
+      </model>
+      <pose>0 0 0 0 0 0</pose>
+      <box>
+        <size>60 60 1</size>
+      </box>
+      <model_count>100</model_count>
+      <distribution>
+        <type>random</type>
+      </distribution>
+    </population>
+
+
+ <!-- Testing the automatic population of objects -->
+    <population name="stone_population2">
+      <model name="stone2">
+        <include>
+          <static>true</static>
+          <uri>model://stone2</uri>
+        </include>
+      </model>
+      <pose>0 0 0 0 0 0</pose>
+      <box>
+        <size>70 70 0.5</size>
+      </box>
+      <model_count>50</model_count>
+      <distribution>
+        <type>random</type>
+      </distribution>
+    </population>
+    <state world_name="default"> 
+      <sim_time>7212 321000000</sim_time>  
+      <real_time>744 496821786</real_time>  
+      <wall_time>1539228409 40882448</wall_time>  
+      <iterations>742421</iterations>     
+      <light name="user_point_light_0"> 
+        <pose frame="">4 -14.6516 3.9 0 -0 0</pose> 
+      </light>  
+      <light name="user_point_light_1"> 
+        <pose frame="">3.88413 -14.1477 3.9 0 -0 0</pose> 
+      </light>  
+      <light name="user_point_light_2"> 
+        <pose frame="">4 -15.1089 3.91259 0 -0 0</pose> 
+      </light>  
+      <light name="user_point_light_3"> 
+        <pose frame="">4 -15.577 3.9 0 -0 0</pose> 
+      </light>  
+      <light name="user_spot_light_0"> 
+        <pose frame="">-0.144593 -20.9614 5 0.2156 -0.05 0</pose> 
+      </light>  
+      <light name="user_spot_light_1"> 
+        <pose frame="">-0.205868 17.8973 5 -0.46 0.05 0</pose> 
+      </light>  
+      <light name="user_spot_light_2"> 
+        <pose frame="">28.4576 0.185276 4.8666 0 0.37187 0</pose> 
+      </light>  
+      <light name="user_spot_light_3"> 
+        <pose frame="">-36.6423 -0.791063 5 0 -0.37281 0.00</pose> 
+      </light> 
+    </state>
+    <light name="user_spot_light_0" type="spot"> 
+      <pose frame="">-1.14812 -21.7863 1 0 -0 0</pose>  
+      <diffuse>1 1 1 1</diffuse>  
+      <specular>1 1 1 1</specular>  
+      <direction>0 0 -1</direction>  
+      <attenuation> 
+        <range>150</range>  
+        <constant>0.0</constant>  
+        <linear>0.02</linear>  
+        <quadratic>0</quadratic> 
+      </attenuation>  
+      <cast_shadows>0</cast_shadows>  
+      <spot> 
+        <inner_angle>0.4</inner_angle>  
+        <outer_angle>2.2</outer_angle>  
+        <falloff>2.1</falloff> 
+      </spot> 
+    </light>  
+    <light name="user_spot_light_1" type="spot"> 
+      <pose frame="">-1.03106 18.5269 1 0 -0 0</pose>  
+      <diffuse>1 1 1 1</diffuse>  
+      <specular>1 1 1 1</specular>  
+      <direction>0 0 -1</direction>  
+      <attenuation> 
+        <range>150</range>  
+        <constant>0.0</constant>  
+        <linear>0.02</linear>  
+        <quadratic>0</quadratic> 
+      </attenuation>  
+      <cast_shadows>0</cast_shadows>  
+      <spot> 
+        <inner_angle>0.4</inner_angle>  
+        <outer_angle>2.2</outer_angle>  
+        <falloff>2.1</falloff> 
+      </spot> 
+    </light>  
+    <light name="user_spot_light_2" type="spot"> 
+      <pose frame="">29.2101 0.185276 1 0 -0 0</pose>  
+      <diffuse>1 1 1 1</diffuse>  
+      <specular>1 1 1 1</specular>  
+      <direction>0 0 -1</direction>  
+      <attenuation> 
+        <range>150</range>  
+        <constant>0.2</constant>  
+        <linear>0.01</linear>  
+        <quadratic>0</quadratic> 
+      </attenuation>  
+      <cast_shadows>0</cast_shadows>  
+      <spot> 
+        <inner_angle>0.4</inner_angle>  
+        <outer_angle>2.2</outer_angle>  
+        <falloff>2.1</falloff> 
+      </spot> 
+    </light>  
+    <light name="user_spot_light_3" type="spot"> 
+      <pose frame="">-36.6423 -1.2117 1 0 -0 0</pose>  
+      <diffuse>1 1 1 1</diffuse>  
+      <specular>1 1 1 1</specular>  
+      <direction>0 0 -1</direction>  
+      <attenuation> 
+        <range>150</range>  
+        <constant>0.2</constant>  
+        <linear>0.01</linear>  
+        <quadratic>0</quadratic> 
+      </attenuation>  
+      <cast_shadows>0</cast_shadows>  
+      <spot> 
+        <inner_angle>0.4</inner_angle>  
+        <outer_angle>2.2</outer_angle>  
+        <falloff>2.1</falloff> 
+      </spot> 
+    </light>  
+    <light name="user_point_light_0" type="point"> 
+      <pose frame="">1.49278 -15.5363 1 0 -0 0</pose>  
+      <diffuse>0 0.98039 0 1</diffuse>  
+      <specular>0.1 0.1 0.1 1</specular>  
+      <attenuation> 
+        <range>0.3</range>  
+        <constant>0.02</constant>  
+        <linear>0.01</linear>  
+        <quadratic>0</quadratic> 
+      </attenuation>  
+      <cast_shadows>0</cast_shadows>  
+      <direction>0 0 -1</direction> 
+    </light>  
+    <light name="user_point_light_1" type="point"> 
+      <pose frame="">6.99411 -11.55 1 0 -0 0</pose>  
+      <diffuse>0 0.98039 0 1</diffuse>  
+      <specular>0.1 0.1 0.1 1</specular>  
+      <attenuation> 
+        <range>0.3</range>  
+        <constant>0.02</constant>  
+        <linear>0.01</linear>  
+        <quadratic>0</quadratic> 
+      </attenuation>  
+      <cast_shadows>0</cast_shadows>  
+      <direction>0 0 -1</direction> 
+    </light>  
+    <light name="user_point_light_2" type="point"> 
+      <pose frame="">5.65528 -14.8924 1 0 -0 0</pose>  
+      <diffuse>0 0.98039 0 1</diffuse>  
+      <specular>0.1 0.1 0.1 1</specular>  
+      <attenuation> 
+        <range>0.3</range>  
+        <constant>0.02</constant>  
+        <linear>0.01</linear>  
+        <quadratic>0</quadratic> 
+      </attenuation>  
+      <cast_shadows>0</cast_shadows>  
+      <direction>0 0 -1</direction> 
+    </light>  
+    <light name="user_point_light_3" type="point"> 
+      <pose frame="">3.6452 -17.3437 1 0 -0 0</pose>  
+      <diffuse>0 0.98039 0 1</diffuse>  
+      <specular>0.1 0.1 0.1 1</specular>  
+      <attenuation> 
+        <range>0.3</range>  
+        <constant>0.02</constant>  
+        <linear>0.01</linear>  
+        <quadratic>0</quadratic> 
+      </attenuation>  
+      <cast_shadows>0</cast_shadows>  
+      <direction>0 0 -1</direction> 
+    </light> 
+
+  </world>
+</sdf>

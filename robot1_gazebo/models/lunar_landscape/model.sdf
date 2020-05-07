@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+    <model name="lunar_landscape">
+      <pose>40 -40 0 0 0 0</pose>
+        <static>true</static>
+	  <link name="link">
+	    <collision name="collision">
+		<surface>
+		  <friction>
+		  <ode>
+		    <mu>0.2</mu>
+		  </ode>
+		  </friction>
+		  <contact>
+		  <ode>
+		    <soft_cfm>1</soft_cfm>
+		    <kp>100000</kp>
+		    <kd>1</kd>
+		    <max_vel>0.000001</max_vel>
+		    <min_depth>0.02</min_depth>
+		  </ode>
+		  </contact>
+		</surface>
+
+	      <geometry>
+                <mesh>
+		  <uri>model://lunar_landscape/meshes/lunar_landscape.dae</uri>
+                    <scale>0.5 0.5 1</scale>
+		</mesh>
+	      </geometry>
+	    </collision>
+
+	    <visual name="visual">
+	      <geometry>
+            	<mesh>
+		  <uri>file://models/lunar_landscape/meshes/lunar_landscape.dae</uri>
+                  <scale>0.5 0.5 1</scale>
+		</mesh>
+	      </geometry>
+        <material>
+          <shader type='pixel'>
+            <normal_map>__default__</normal_map>
+          </shader>
+	<lighting>1</lighting>
+        </material>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <cast_shadows>1</cast_shadows>
+        <transparency>0</transparency>
+        <meta>
+          <layer>0</layer>
+        </meta>
+	    </visual>
+    
+    </link>
+  </model>
+</sdf>
