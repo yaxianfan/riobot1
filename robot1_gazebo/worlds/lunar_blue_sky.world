@@ -1,0 +1,78 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.6">
+  <world name="default">
+
+    <gui>
+     <camera name="user_camera">
+       <pose>-40.637 0.86 2.365 0 0.1899 0.476</pose>
+     </camera>
+    </gui>
+
+    <scene>
+      <grid>false</grid>
+      <origin_visual>false</origin_visual>
+      <ambient>0.592 0.624 0.635 1</ambient>
+      <background>0.35 0.35 0.35 1.0</background>
+      <sky>
+        <time>6</time>
+        <sunrise>6</sunrise>
+        <sunset>10</sunset>
+        <clouds>
+          <speed>12</speed>
+        </clouds>
+      </sky>
+      <shadows>1</shadows>
+    </scene>
+
+    <physics name='default_physics' default='0' type='ode'>
+      <max_step_size>0.005</max_step_size>
+      <real_time_factor>1000</real_time_factor><!--1-->
+      <real_time_update_rate>1000</real_time_update_rate><!--200-->
+    </physics>
+
+
+    <!-- A global light source -->
+
+    <light type="directional" name="sun">
+      <pose>0 0 1000 0 0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.5 0.5 0.5 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.4</direction>
+    </light>
+
+    <!-- Environment -->
+    <include>
+      <name>city_terrain_1</name>
+      <pose>0 0 0 0 0 0</pose>
+      <uri>model://apollo15_landing_site_1000x1000</uri>
+    </include>
+
+ <!-- Testing the automatic population of objects -->
+    <population name="stone_population1">
+      <model name="stone1">
+        <include>
+          <static>true</static>
+          <uri>model://stone1</uri>
+        </include>
+      </model>
+      <pose>-100 -100 0 0 0 0</pose>
+      <box>
+        <size>300 300 0.001</size>
+      </box>
+      <model_count>300</model_count>
+      <distribution>
+        <type>random</type>
+      </distribution>
+    </population>
+
+
+  </world>
+</sdf>
