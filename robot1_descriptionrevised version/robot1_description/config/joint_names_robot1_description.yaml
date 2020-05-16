@@ -1,0 +1,1 @@
+controller_joint_names: ['', 'wheel1_joint', 'wheel2_joint', 'wheel3_joint', 'wheel4_joint', 'column_joint', 'bevel_joint', 'imu_joint', 'camera_joint', '3dlaser_joint', ]
