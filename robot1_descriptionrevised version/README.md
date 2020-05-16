@@ -1,0 +1,2 @@
+Moonbuggy是月球车的solidworks模型文件
+通过sw_to_urdf插件，将x_t文件转成urdf文件放在robot1_description
