@@ -1,0 +1,5 @@
+robot1_base_04.xacro是gazebo中的长方体圆柱直接搭建出来的
+robot1_description.xacro是solidworks转过来的
+robot.gazebo和robot1.gazebo分别是上述两个xacro中传感器的插件
+
+robot2.gazebo和robot1_base_02.xacro是加刘pid模型的小车

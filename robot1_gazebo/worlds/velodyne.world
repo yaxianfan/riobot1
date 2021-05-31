@@ -1,0 +1,1984 @@
+<sdf version='1.6'>
+  <world name='default'>
+    <physics name='default_physics' default='0' type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <model name='moon_surface'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.2</mu>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <soft_cfm>1</soft_cfm>
+                <kp>100000</kp>
+                <kd>1</kd>
+                <max_vel>1e-06</max_vel>
+                <min_depth>0.02</min_depth>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <geometry>
+            <heightmap>
+              <uri>model://apollo15_landing_site_1000x1000/materials/textures/NAC_DTM_APOLLO15_E261N0036_257x257+7472+2152.png</uri>
+              <size>514 514 49</size>
+              <pos>0 0 -45</pos>
+              <texture>
+                <size>10</size>
+                <diffuse>__default__</diffuse>
+                <normal>__default__</normal>
+              </texture>
+              <blend>
+                <min_height>0</min_height>
+                <fade_dist>0</fade_dist>
+              </blend>
+            </heightmap>
+          </geometry>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <heightmap>
+              <texture>
+                <diffuse>model://apollo15_landing_site_1000x1000/materials/textures/AS16-110-18026HR-512x512.jpg</diffuse>
+                <normal>file://media/materials/textures/flat_normal.png</normal>
+                <size>2</size>
+              </texture>
+              <uri>model://apollo15_landing_site_1000x1000/materials/textures/NAC_DTM_APOLLO15_E261N0036_257x257+7472+2152.png</uri>
+              <size>514 514 49</size>
+              <pos>0 0 -45</pos>
+              <blend>
+                <min_height>0</min_height>
+                <fade_dist>0</fade_dist>
+              </blend>
+            </heightmap>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+    </model>
+    <scene>
+      <ambient>0 0 0 1</ambient>
+      <background>0 0 0 1</background>
+      <grid>0</grid>
+      <sky>
+        <time>13</time>
+        <sunrise>12</sunrise>
+        <sunset>12</sunset>
+        <clouds>
+          <humidity>0</humidity>
+        </clouds>
+      </sky>
+      <shadows>1</shadows>
+    </scene>
+    <light name='sun' type='directional'>
+      <pose frame=''>0 0 12 -0.31 0.39 -1.73</pose>
+      <cast_shadows>1</cast_shadows>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.5 0.5 0.5 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.4</direction>
+    </light>
+    <light name='sun7' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose frame=''>-1 -1 10 0 -0 0</pose>
+      <diffuse>0.9 0.9 0.9 1</diffuse>
+      <specular>0.5 0.5 0.5 1</specular>
+      <attenuation>
+        <range>100</range>
+        <constant>1</constant>
+      </attenuation>
+      <direction>-1 1 -1</direction>
+    </light>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <state world_name='default'>
+      <sim_time>16095 240000000</sim_time>
+      <real_time>15850 662489065</real_time>
+      <wall_time>1594293346 935026296</wall_time>
+      <iterations>15808674</iterations>
+      <model name='cube_20k'>
+        <pose frame=''>13.7345 24.5914 -0.071956 -0.094862 -0.031998 -0.105445</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>13.7237 24.6401 0.425541 -0.094862 -0.031998 -0.105445</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>1.18768 -1.19702 2.3849 1.58438 0.830681 2.91394</acceleration>
+          <wrench>1.18768 -1.19702 2.3849 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='drc_practice_white_jersey_barrier'>
+        <pose frame=''>12.4244 13.4894 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>12.4244 13.4894 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='moon_surface'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1'>
+        <pose frame=''>12.9206 18.4882 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>12.9206 18.4882 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1_0'>
+        <pose frame=''>13.6667 29.0145 -0.436939 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>13.6667 29.0145 -0.436939 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1_1'>
+        <pose frame=''>12.5622 32.2313 -0.440519 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>12.5622 32.2313 -0.440519 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1_10'>
+        <pose frame=''>7.96545 22.314 -0.275168 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>7.96545 22.314 -0.275168 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1_11'>
+        <pose frame=''>5.63715 34.9447 -0.506085 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>5.63715 34.9447 -0.506085 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1_12'>
+        <pose frame=''>8.08632 34.5392 -0.474132 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>8.08632 34.5392 -0.474132 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1_13'>
+        <pose frame=''>14.396 37.9045 -0.379532 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>14.396 37.9045 -0.379532 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1_14'>
+        <pose frame=''>12.4861 37.9806 -0.406533 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>12.4861 37.9806 -0.406533 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1_15'>
+        <pose frame=''>6.70023 39.1269 -0.537971 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>6.70023 39.1269 -0.537971 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1_16'>
+        <pose frame=''>13.4977 41.5845 -0.474996 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>13.4977 41.5845 -0.474996 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1_17'>
+        <pose frame=''>5.18283 40.8011 -0.733293 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>5.18283 40.8011 -0.733293 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1_18'>
+        <pose frame=''>8.82122 51.6883 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>8.82122 51.6883 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1_19'>
+        <pose frame=''>6.12242 52.3073 -0.530115 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>6.12242 52.3073 -0.530115 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1_2'>
+        <pose frame=''>11.3753 28.0758 -0.497412 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>11.3753 28.0758 -0.497412 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1_20'>
+        <pose frame=''>2.88531 44.4376 -0.728864 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>2.88531 44.4376 -0.728864 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1_21'>
+        <pose frame=''>0.711754 44.1397 -0.833818 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>0.711754 44.1397 -0.833818 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1_22'>
+        <pose frame=''>3.60612 52.3716 -0.733238 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>3.60612 52.3716 -0.733238 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1_23'>
+        <pose frame=''>0.549304 52.9767 -1.27239 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>0.549304 52.9767 -1.27239 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1_24'>
+        <pose frame=''>-1.57502 44.1893 -1.24799 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>-1.57502 44.1893 -1.24799 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1_25'>
+        <pose frame=''>-2.8968 53.1465 -1.72334 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>-2.8968 53.1465 -1.72334 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1_3'>
+        <pose frame=''>7.96425 13.9227 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>7.96425 13.9227 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1_4'>
+        <pose frame=''>7.89981 17.0803 -0.180901 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>7.89981 17.0803 -0.180901 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1_5'>
+        <pose frame=''>6.31821 17.7982 -0.279202 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>6.31821 17.7982 -0.279202 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1_6'>
+        <pose frame=''>6.53041 15.2027 -0.219735 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>6.53041 15.2027 -0.219735 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1_7'>
+        <pose frame=''>6.29324 22.8087 -0.362838 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>6.29324 22.8087 -0.362838 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1_8'>
+        <pose frame=''>5.05039 29.05 -0.271286 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>5.05039 29.05 -0.271286 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='stone1_9'>
+        <pose frame=''>7.93451 29.6751 -0.490421 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='stone1_link'>
+          <pose frame=''>7.93451 29.6751 -0.490421 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='unit_box_0'>
+        <pose frame=''>13.3696 47.5586 0.319323 0.179603 -0.05034 0.029836</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>13.3696 47.5586 0.319323 0.179603 -0.05034 0.029836</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-1.58302 0.862739 1.5564 0.251926 -0.235522 2.53958</acceleration>
+          <wrench>-1.58302 0.862739 1.5564 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='unit_box_1'>
+        <pose frame=''>11.3203 52.3067 0.601747 0.094816 -0.095626 0.001978</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>11.3203 52.3067 0.601747 0.094816 -0.095626 0.001978</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='unit_sphere_0'>
+        <pose frame=''>5.23158 45.3515 -0.112712 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>5.23158 45.3515 -0.112712 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose frame=''>0 0 12 -0.31 0.39 -1.73</pose>
+      </light>
+      <light name='sun7'>
+        <pose frame=''>-1 -1 10 0 -0 0</pose>
+      </light>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>-0.28577 48.9594 0.711762 0 0.35438 2.28674</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <model name='stone1'>
+      <pose frame=''>12.9206 18.4882 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='cube_20k'>
+      <link name='link'>
+        <pose frame=''>0 0 0.5 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://cube_20k/meshes/cube_20k.stl</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://cube_20k/meshes/cube_20k.stl</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>13.8216 23.878 0 0 -0 0</pose>
+    </model>
+    <model name='drc_practice_white_jersey_barrier'>
+      <static>1</static>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://drc_practice_white_jersey_barrier/meshes/jersey_barrier.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://drc_practice_white_jersey_barrier/meshes/jersey_barrier.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>12.4244 13.4894 0 0 -0 0</pose>
+    </model>
+    <model name='stone1_0'>
+      <pose frame=''>13.6667 29.0145 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='stone1_1'>
+      <pose frame=''>12.5622 32.2313 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='stone1_2'>
+      <pose frame=''>11.3753 28.0758 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='stone1_3'>
+      <pose frame=''>7.96425 13.9227 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='stone1_4'>
+      <pose frame=''>7.89981 17.0803 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='stone1_5'>
+      <pose frame=''>6.31821 17.7982 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='stone1_6'>
+      <pose frame=''>6.53041 15.2027 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='stone1_7'>
+      <pose frame=''>6.29324 22.8087 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='stone1_8'>
+      <pose frame=''>5.05039 29.05 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='stone1_9'>
+      <pose frame=''>7.93451 29.6751 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='stone1_10'>
+      <pose frame=''>7.96545 22.314 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='stone1_11'>
+      <pose frame=''>5.63715 34.9447 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='stone1_12'>
+      <pose frame=''>8.08632 34.5392 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='stone1_13'>
+      <pose frame=''>14.396 37.9045 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='stone1_14'>
+      <pose frame=''>12.4861 37.9806 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='stone1_15'>
+      <pose frame=''>6.70023 39.1269 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='stone1_16'>
+      <pose frame=''>13.4977 41.5845 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='stone1_17'>
+      <pose frame=''>5.18283 40.8011 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='unit_sphere_0'>
+      <pose frame=''>5.23158 45.3515 0.5 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.1</iyy>
+            <iyz>0</iyz>
+            <izz>0.1</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <sphere>
+              <radius>0.5</radius>
+            </sphere>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <sphere>
+              <radius>0.5</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Grey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='unit_box_0'>
+      <pose frame=''>13.3724 47.6565 0.5 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.166667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.166667</iyy>
+            <iyz>0</iyz>
+            <izz>0.166667</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Grey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='unit_box_1'>
+      <pose frame=''>11.3768 52.3415 0.5 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.166667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.166667</iyy>
+            <iyz>0</iyz>
+            <izz>0.166667</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Grey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='stone1_18'>
+      <pose frame=''>8.82122 51.6883 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='stone1_19'>
+      <pose frame=''>6.12242 52.3073 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='stone1_20'>
+      <pose frame=''>2.88531 44.4376 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='stone1_21'>
+      <pose frame=''>0.711754 44.1397 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='stone1_22'>
+      <pose frame=''>3.60612 52.3716 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='stone1_23'>
+      <pose frame=''>0.549304 52.9767 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='stone1_24'>
+      <pose frame=''>-1.57502 44.1893 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='stone1_25'>
+      <pose frame=''>-2.8968 53.1465 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='stone1_link'>
+        <collision name='stone1_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='stone1_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://stone1/meshes/s1.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <shader type='pixel'>
+              <normal_map>__default__</normal_map>
+            </shader>
+            <lighting>0</lighting>
+          </material>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <cast_shadows>1</cast_shadows>
+          <transparency>0</transparency>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+  </world>
+</sdf>

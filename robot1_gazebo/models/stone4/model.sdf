@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+    <model name="stone4">
+      <pose>0 0 0 0 0 0</pose>
+        <static>false</static>
+	  <link name="stone4_link">
+	    <collision name="stone4_collision">
+	      <geometry>
+                <mesh>
+		  <uri>model://stone4/meshes/Intresto_rock_for_landscape_03.dae</uri>
+                    <scale>2 2 2</scale>
+		</mesh>
+	      </geometry>
+	    </collision>
+
+	    <visual name="stone4_visual">
+	      <geometry>
+            	<mesh>
+		  <uri>model://stone4/meshes/Intresto_rock_for_landscape_03.dae</uri>
+                  <scale>2 2 2</scale>
+		</mesh>
+	      </geometry>
+<!--
+		  <material>
+		    <shader type='pixel'>
+		      <normal_map>__default__</normal_map>
+		    </shader>
+		    <lighting>0</lighting>
+		  </material>
+		  <pose frame=''>0 0 0 0 -0 0</pose>
+		  <cast_shadows>1</cast_shadows>
+		  <transparency>0</transparency>
+-->
+	    </visual>
+    
+    </link>
+  </model>
+</sdf>
